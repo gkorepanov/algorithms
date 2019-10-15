@@ -1,4 +1,6 @@
-def select_k(arr, k):
+from typing import List
+
+def select_k(arr: List, k: int):
     """
     Function of selecting k-th element of array
     Parameters
@@ -15,6 +17,10 @@ def select_k(arr, k):
         9
         >>> select_k(arr, 5) == sorted(arr)[5]
         True
+
+    Complexity
+    --------
+         O(n) in average. O(n^2) in worst-case
     """
     k = len(arr) + k if k < 0 else k
 
@@ -33,13 +39,18 @@ def select_k(arr, k):
             return select_k(right, k - len(left) - len(pivots))
 
 
-def split_array(arr, pivot):
+def split_array(arr: List, pivot: int):
     """
-    Function of split array into three: more, less and equally than pivot
+    Function of split array into three, where each element
+    larger, smaller or equal to the pivot
     Parameters
     ----------
         arr:    list, input array
         pivot:  int, boundary value
+
+    Complexity
+    --------
+         O(n). One pass on the list
     """
     left, right, pivots = [], [], []
     for element in arr:
@@ -51,7 +62,8 @@ def split_array(arr, pivot):
             pivots.append(element)
     return left, right, pivots
 
-def select_median(arr):
+
+def select_median(arr: List):
     """
     Function of selecting median of array
     Parameters
@@ -66,6 +78,10 @@ def select_median(arr):
         >>> arr = [1, 9, 2, 8, 3, 7, 4, 6, 5, 0]
         >>> select_median(arr)
         4.5
+
+    Complexity
+    --------
+         O(n) in average. O(n^2) in worst-case
     """
     if len(arr) % 2 == 1:
         return select_k(arr, len(arr) // 2)
