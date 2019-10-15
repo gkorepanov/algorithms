@@ -23,7 +23,6 @@ def select_k(arr, k):
     if len(arr) == 1:
         return arr[k]
     else:
-        
         pivot = arr[len(arr)//2]
         left, right, pivots = split_array(arr, pivot)
         if k < len(left):
@@ -36,7 +35,7 @@ def select_k(arr, k):
 
 def split_array(arr, pivot):
     """
-    Function of selecting median of array
+    Function of split array into three: more, less and equally than pivot
     Parameters
     ----------
         arr:    list, input array
