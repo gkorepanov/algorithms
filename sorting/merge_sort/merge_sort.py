@@ -1,6 +1,8 @@
-def merge(left, right):
+from typing import List
+
+def merge(left: List, right: List):
     """
-    Merge two sorted array into one
+    Merge two sorted arrays into one
     Parameters
     ----------
         left:   list
@@ -8,7 +10,7 @@ def merge(left, right):
     """
     i = j = 0
     arr = []
-    while(i < len(left) and  j < len(right)):
+    while (i < len(left)) and  (j < len(right)):
         if left[i] < right[j]:
             arr.append(left[i])
             i += 1
@@ -18,7 +20,7 @@ def merge(left, right):
     return arr + left[i:] + right[j:]
     
 
-def merge_sort(arr):
+def merge_sort(arr: List):
     """
     Function of array sorting using merge-sort algorithm
     Parameters
@@ -36,3 +38,4 @@ def merge_sort(arr):
         right = merge_sort(arr[m:])
         arr = merge(left, right)    
     return arr
+    
