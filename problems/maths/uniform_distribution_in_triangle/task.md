@@ -5,6 +5,8 @@ using as few `random()` calls as possible.
 The resulting distribution should be uniform.
 
 # Solution
+[code](solution.py)
+[visualization](visualization.ipynb)
 
 ## Generating two random numbers from one
 Generated 64-bit random number is split into two random numbers
